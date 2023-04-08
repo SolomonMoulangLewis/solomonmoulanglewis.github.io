@@ -1,0 +1,315 @@
+/* 
+    Root variables for colors and one for font
+    Note:
+    I would have liked to have added some more
+    of the darker offsets for a bit more
+    color definition between the background elements
+    and titles
+*/
+:root{
+    --primary: #3d6d79;
+    --secondary: #d69e67;
+
+    --primary-dark: #4f6e75;
+
+    --off-white: #dfe2ee;
+    --off-white-shadow: #c5cbe0;
+    --light: white;
+
+    --timeline1: #598193;
+    --timeline2: #423452;
+    --timeline3: #F7B064;
+
+    --content-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+/* External font */
+@font-face {
+    font-family: Akira;
+    src: url(./font/Akira\ Expanded\ Demo.otf);
+}
+/* giving inital styling to the whole 'body element' */
+body{
+    /* background */
+    overflow: hidden;
+    font-family: Akira;
+}
+
+/* background div container for background colour */
+.background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+
+    background-color: var(--primary);
+}
+
+.project-header{
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    max-height: 12vh;
+
+    background: var(--primary);
+    color: var(--secondary);
+
+    background: linear-gradient(
+        to right,
+        var(--secondary) 0%,
+        var(--secondary) 25%,
+        rgb(0, 0, 0, 0) 50%)
+        left bottom no-repeat;
+    background-size: 100% 0.08rem;
+}
+#logo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 17%;
+    height: 80%;
+    padding: 0.5rem;
+    margin: 1rem;
+
+    font-size: 1.6rem;
+
+    /* gradient underline */
+    border-left: 0.2rem solid var(--secondary);
+    border-right: 0.08rem solid var(--secondary);
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+.nav-links > li > a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--secondary);
+}
+.nav-links > li > a:hover {
+    text-decoration: underline;
+}
+
+/* Main content (Timetable and Aside Container) */
+main{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.content-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 1rem;
+}
+
+.subheading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 10vh;
+}
+
+.time-table{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height: 86vh;
+
+    color: var(--primary);
+    background: var(--secondary);
+    font-family: var(--content-font);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+#main-heading{
+    color: var(--primary-dark);
+    font-size: 4rem;
+    font-family: Akira;
+    letter-spacing: 0.2rem;
+}
+
+.schedule{
+    width: 98%;
+    color: var(--off-white);
+    background: var(--primary);
+    cursor: default;
+}
+li{
+    list-style: none;
+}
+
+.days{
+    width: 100%;
+}
+/* Days-grid = outer 'ul' */
+.days-grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    height: 5vh;
+}
+.days-grid > li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0.08rem solid var(--off-white-shadow);
+}
+
+.timetable-content{
+    width: 98%;
+    height: 100%;
+
+    background: var(--off-white);
+}
+
+.timeline{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+}
+.timeline > ul > li{
+    width: 100%;
+    height: 100%;
+}
+.timetable-content li {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 0.08rem solid var(--off-white-shadow);
+}
+/* This is the outer 'UL' -> columns for days of the week */
+.weekly-schedule{
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+/* Inner 'UL' -> rows for times */
+.time{
+    display: grid;
+    grid-template-rows: repeat(11, 1fr);
+
+    width: 100%;
+    height: 100%;
+}
+.content1{
+    background: var(--timeline2);
+    color: var(--off-white);
+}
+.content2{
+    background: var(--timeline3);
+}
+.content3{
+    background: var(--timeline1);
+    color: var(--off-white);
+}
+
+.reminders{
+    display: flex;
+    justify-content: center;
+
+    width: 40%;
+    height: 86vh;
+
+    background: var(--secondary);
+
+    background: linear-gradient(
+        to right,
+        var(--secondary) 0%,
+        var(--secondary) 25%,
+        rgb(0, 0, 0, 0) 50%)
+        left top no-repeat;
+    background-size: 100% 0.2rem;
+
+    font-family: var(--content-font);
+}
+.reminders::before{
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    background: var(--off-white);
+    z-index: -2;
+}
+#aside-heading{
+    font-size: 3.6rem;
+    padding: 0.2rem;
+
+    color: var(--primary-dark);
+    font-family: Akira;
+}
+.reminder-content{
+    display: grid;
+    grid-template-rows: repeat(3, 20%);
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+}
+.reminders-sub-title{
+    font-size: 2rem;
+    padding: 1rem;
+    color: var(--primary);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.reminders-text::after{
+    content: "+";
+    font-size: 2rem;
+    margin-left: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.3rem;
+    color: var(--secondary);
+    background: var(--light);
+    border-radius: 50%;
+}
+.points{
+    font-size: 1.6rem;
+    margin-left: 1rem;
+    padding: 1.2rem;
+    color: var(--primary);
+    background: var(--light);
+    border-radius: 10%;
+    font-weight: bold;
+}
+.points li {
+    list-style-image: url(./svg/bullet-point.svg);
+}

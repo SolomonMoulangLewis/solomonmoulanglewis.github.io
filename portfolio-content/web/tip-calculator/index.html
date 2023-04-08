@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tip Calculator</title>
+  </head>
+  <body>
+    <!--Header-->
+    <header>
+      <div id="logo">
+        <h1 class="title">Tip Calculator</h1>
+      </div>
+    </header>
+
+    <!--Main Content-->
+    <main>
+      <section>
+        <div class="calculator-container">
+          <div class="calculator">
+            <div class="calc-grid">
+              <div class="calc-screen">
+                <h2 id="heading"></h2>
+                <div class="on-screen">
+                  <p class="input"></p>
+                  <p class="output"></p>
+                </div>
+              </div>
+              <!--
+                calc-button applied to each button,
+                for 'general' styling.
+                ID's applied to each button,
+                for 'individual' styling.
+              -->
+              <!--Row 2-->
+              <button id="ac" class="calc-button">AC</button>
+              <button id="del" class="calc-button">DEL</button>
+              <!--Row 3-->
+              <!--
+                Assigning 'data' attribute 
+                (Acts almost like another class name)
+              -->
+              <button data-number id="1" class="calc-button">1</button>
+              <button data-number id="2" class="calc-button">2</button>
+              <button data-number id="3" class="calc-button">3</button>
+              <!--Row 4-->
+              <button data-number id="4" class="calc-button">4</button>
+              <button data-number id="5" class="calc-button">5</button>
+              <button data-number id="6" class="calc-button">6</button>
+              <!--Row 5-->
+              <button data-number id="7" class="calc-button">7</button>
+              <button data-number id="8" class="calc-button">8</button>
+              <button data-number id="9" class="calc-button">9</button>
+              <!--Row 6-->
+              <button id="dot" class="calc-button">.</button>
+              <button data-number id="0" class="calc-button">0</button>
+              <button id="submit" class="calc-button">SUBMIT</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="background"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

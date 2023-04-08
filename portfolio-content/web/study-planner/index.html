@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Study Planner</title>
+  </head>
+  <body>
+    <!--Header and Nav Bar-->
+    <header class="project-header">
+      <!--Header-->
+      <div id="logo">
+        <h2 class="title">Study</h2>
+        <h2 class="title">Planner</h2>
+      </div>
+      <nav>
+        <!--Nav-->
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">Javascript</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Main content container-->
+    <main>
+      <div class="content-container">
+        <!--TimeTable-->
+        <section class="time-table">
+          <div class="subheading">
+            <h2 id="main-heading">TimeTable</h2>
+          </div>
+          <!--Schedule (Shows days of the week)-->
+          <div class="schedule">
+            <div class="days">
+              <ul class="days-grid">
+                <li>Monday</li>
+                <li>Tuesday</li>
+                <li>Wednesday</li>
+                <li>Thursday</li>
+                <li>Friday</li>
+              </ul>
+            </div>
+          </div>
+          <!--TimeTable:
+              Consists of nested lists.
+
+              Note: I think there is a better way to do this.
+              Unfortunately the way I built the prject was adding
+              borders around 'li' elements. So changing would have
+              affected my styling. 
+              If I made this again I would have no 'li' in the nested list
+              then added them in javascript.
+              Or
+              Empty 'li' which could be filled in a JS file.
+              Then I could use 'span' to make the boxes fill multiple for
+              extended time period boxes.
+          -->
+            <div class="timetable-content">
+              <div class="timeline">
+                <ul class="weekly-schedule">
+                  <li id="Monday" class="day">
+                    <ul class="time">
+                      <li class="09:00-09:30 content1">
+                        <p class="heading">HTML</p>
+                        <p class="timing">09:00-09:30</p>
+                      </li>
+                      <li class="10:00-10:30 content1">
+                        <p>|</p>
+                      </li>
+                      <li class="11:00-11:30 content1">
+                        <p>|</p>
+                      </li>
+                      <li class="12:00-12:30 content1">
+                        <p>|</p>
+                      </li>
+                      <li class="13:00-13:30 content1">
+                        <p>|</p>
+                      </li>
+                      <li class="14:00-14:30 content1">
+                        <p class="heading">HTML</p>
+                        <p class="timing">14:00-14:30</p>
+                      </li>
+                      <li class="15:00-15:30"></li>
+                      <li class="16:00-16:30"></li>
+                      <li class="17:00-17:30"></li>
+                      <li class="18:00-18:30"></li>
+                      <li class="19:00-19:30"></li>
+                    </ul>
+                  </li>
+                  <li id="Tuesday" class="day">
+                    <ul class="time">
+                      <li class="09:00-09:30"></li>
+                      <li class="10:00-10:30 content2">
+                        <p class="heading">CSS</p>
+                        <p class="timing">10:00-10:30</p>
+                      </li>
+                      <li class="11:00-11:30 content2">
+                        <p class="heading">|</p>
+                      </li>
+                      <li class="12:00-12:30 content2">
+                        <p class="heading">CSS</p>
+                        <p class="timing">12:00-12:30</p>
+                      </li>
+                      <li class="13:00-13:30"></li>
+                      <li class="14:00-14:30"></li>
+                      <li class="15:00-15:30"></li>
+                      <li class="16:00-16:30"></li>
+                      <li class="17:00-17:30"></li>
+                      <li class="18:00-18:30"></li>
+                      <li class="19:00-19:30"></li>
+                    </ul>
+                  </li>
+                  <li id="Wednesday" class="day">
+                    <ul class="time">
+                      <li class="09:00-09:30"></li>
+                      <li class="10:00-10:30"></li>
+                      <li class="11:00-11:30"></li>
+                      <li class="12:00-12:30"></li>
+                      <li class="13:00-13:30"></li>
+                      <li class="14:00-14:30 content3">
+                        <p class="heading">Javascript</p>
+                        <p class="timing">14:00-14:30</p>
+                      </li>
+                      <li class="15:00-15:30 content3">
+                        <p>|</p>
+                      </li>
+                      <li class="16:00-16:30 content3">
+                        <p>|</p>
+                      </li>
+                      <li class="17:00-17:30 content3">
+                        <p class="heading">Javascript</p>
+                        <p class="timing">17:00-17:30</p>
+                      </li>
+                      <li class="18:00-18:30"></li>
+                      <li class="19:00-19:30"></li>
+                    </ul>
+                  </li>
+                  <li id="Thursday" class="day">
+                    <ul class="time">
+                      <li class="09:00-09:30"></li>
+                      <li class="10:00-10:30"></li>
+                      <li class="11:00-11:30"></li>
+                      <li class="12:00-12:30"></li>
+                      <li class="13:00-13:30"></li>
+                      <li class="14:00-14:30"></li>
+                      <li class="15:00-15:30"></li>
+                      <li class="16:00-16:30"></li>
+                      <li class="17:00-17:30"></li>
+                      <li class="18:00-18:30"></li>
+                      <li class="19:00-19:30"></li>
+                    </ul>
+                  </li>
+                  <li id="Friday" class="day">
+                    <ul class="time">
+                      <li class="09:00-09:30"></li>
+                      <li class="10:00-10:30"></li>
+                      <li class="11:00-11:30"></li>
+                      <li class="12:00-12:30"></li>
+                      <li class="13:00-13:30"></li>
+                      <li class="14:00-14:30"></li>
+                      <li class="15:00-15:30"></li>
+                      <li class="16:00-16:30"></li>
+                      <li class="17:00-17:30"></li>
+                      <li class="18:00-18:30"></li>
+                      <li class="19:00-19:30"></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!--Reminders-->
+        <!--Aside:
+            The user could add content here with the plus button
+            to remind themselves of things they need to complete 
+            during the week-->
+        <aside class="reminders">
+          <section>
+            <div class="subheading">
+              <h2 id="aside-heading">Reminders</h2>
+            </div>
+            <div class="reminder-content">
+              <div class="high-priority">
+                <div class="reminders-sub-title">
+                  <h3 class="reminders-text">High Priority</h3>
+                </div>
+                <ul class="points">
+                  <li><p>COMP 348: Deadline Friday</p></li>
+                </ul>
+              </div>
+              <div class="priority">
+                <div class="reminders-sub-title">
+                  <h3 class="reminders-text">Priority</h3>
+                </div>
+                <ul class="points">
+                  <li><p>Learn Next.js</p></li>
+                </ul>
+              </div>
+              <div class="low-priority">
+                <div class="reminders-sub-title">
+                  <h3 class="reminders-text">Low Priority</h3>
+                </div>
+                <ul class="points">
+                  <li>
+                    <p>
+                      Find out how browsers interpret HTML, CSS and Javascript
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <div class="background"></div>
+  </body>
+</html>

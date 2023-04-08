@@ -1,0 +1,303 @@
+/* -------------------------------------------------------------------- */
+
+body {
+    height: 200vh;
+    font-family: main-reg;
+    font-size: 1.6rem;
+    overflow-x: hidden;
+}
+
+nav {
+    width: 100%;
+    height: var(--nav-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.title-container {
+    width: 50%;
+    height: var(--nav-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1em;
+    z-index: 1;
+}
+
+.title-container h1 {
+    font-size: 2.6rem;
+    font-family: main-bold;
+}
+
+.title-container h3 {
+    font-size: 1.6rem;
+    font-family: sub-reg;
+}
+
+/* ------------------------------- */
+/* BIG RED LINE - LANDING PAGE */
+
+body::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    -webkit-text-stroke: 0vw black;
+    border-right: 2px solid red;
+    overflow: hidden;
+    animation: animate 4s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animate {
+    0% {
+        width: 100%;
+        z-index: 1;
+    }
+
+    90% {
+        width: 0%;
+    }
+
+    95% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
+}
+
+/* ------------------------------- */
+/* NAV LIST - RHS */
+
+.nav-list {
+    width: 50%;
+    height: var(--nav-height);
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+}
+
+.nav-link {
+    color: black;
+    font-family: sub-reg;
+    transition: all 300ms;
+}
+
+.nav-link:hover {
+    border-bottom: 1px solid red;
+}
+
+/* ------------------------------- */
+/* NAV ANIMATIONs */
+
+span {
+    transition: all 1s ease;
+    display: inline-block;
+    transform: translateY(0px);
+}
+
+span.fade {
+    animation: animate_nav 1s forwards;
+}
+
+@keyframes animate_nav {
+    0% {
+        opacity: 1;
+        transform: rotateY(0deg);
+        transform: translateY(0px);
+    }
+
+    50% {
+        opacity: 0;
+        transform: rotateY(180deg);
+        /* transform: translateY(200px); */
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateY(0deg);
+        transform: translateY(0px);
+    }
+}
+
+/* ------------------------------- */
+/* BACKGROUND MAIN PAGE */
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    align-self: center;
+
+    background: linear-gradient(to left, #dbe0e000, var(--off-white));
+
+    z-index: -1;
+}
+
+/* ------------------------------- */
+/* ABOUT ME TEXT */
+
+#about-me {
+    position: fixed;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 15vw;
+    font-size: 3.8rem;
+    font-family: sub-reg;
+}
+
+i {
+    color: red;
+}
+
+#hi {
+    font-size: 4.8rem;
+    font-family: main-bold;
+    position: relative;
+    width: fit-content;
+}
+
+#about-me-text1 {
+    width: 40%;
+    margin: 5vh;
+    position: relative;
+}
+
+#about-me-text2 {
+    width: 60%;
+    margin-left: 8vw;
+    position: relative;
+}
+
+#about-me-text3 {
+    font-size: 2.6rem;
+
+    margin: 1em;
+    margin-left: 14vw;
+    position: relative;
+}
+
+/* ------------------------------- */
+/* BIG WHITE CIRCLE */
+
+#projects-section {
+    width: 100%;
+    height: 200vh;
+    position: absolute;
+    background: linear-gradient(to right, #dbe0e000, var(--off-white));
+    top: 100vh;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+#projects-content-container {
+    display: flex;
+    justify-content: center;
+}
+
+#projects-content-container h2 {
+    margin-top: 6em;
+    font-size: 4.8rem;
+    font-family: main-bold;
+    position: relative;
+    text-transform: uppercase;
+}
+
+/* ------------------------------- */
+/* MAIN PROJECTS CONTAINER */
+
+#main-projects-container {
+    position: absolute;
+    top: 130vh;
+    left: 50vw;
+    width: 40vw;
+    height: 80vh;
+
+    /* z-index: -1; */
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+#main-projects-container a {
+    text-decoration: none;
+    color: black;
+}
+
+.project-container {
+    width: 70%;
+    height: 70%;
+    background: #f4f4f4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: sub-reg;
+    transition: all 1s;
+}
+
+.project-container:hover {
+    width: 75%;
+    height: 75%;
+}
+
+#cplusplus {
+    position: relative;
+    top: -6vh;
+    left: -10vw;
+}
+
+#web-development {
+    position: relative;
+    left: -4vw;
+}
+
+#databases {
+    position: relative;
+    top: -4vh;
+    left: -5vw;
+}
+
+#user-interface-design {
+    position: relative;
+    top: 3vh;
+}
+
+/* ------------------------------- */
+/* P5 Background Clouds CANVAS */
+
+#sketch-holder {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}

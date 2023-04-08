@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--p5 libraries-->
+  <script src="./scripts/p5/p5.js"></script>
+  <script src="./scripts/p5/p5.sound.min.js"></script>
+  <!--My Additional Files-->
+  <script src="./scripts/weather-synth.js"></script>
+  <script src="./scripts/circMaker.js"></script>
+  <script src="./scripts/sun-moon.js"></script>
+  <!--CSS-->
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <!--grid container for display: grid-->
+  <div class="grid-container">
+    <!--Header-->
+    <header>
+      <div class="title-logo">
+        <div id="logo">
+          <!--SVG-->
+          <img id="logo-svg" src="./svg/logo-v2.svg" alt="An image of a circle with clouds" />
+        </div>
+        <div id="title">
+          <h1>Elements in Harmony</h1>
+          <h2 id="sub-title">an immersive experience</h2>
+        </div>
+      </div>
+    </header>
+
+    <!--Main Content-->
+    <main>
+      <section>
+        <article>
+          <!--Main Content Main Container-->
+          <div class="main-content">
+            <!--Main Content Sub Container-->
+            <div class="main-content-container">
+              <!--Project Description Container-->
+              <div class="project-description">
+                <p id="description">
+                  Using the current weather data from the input
+                  location, to generate a visual and sonic experience
+                </p>
+              </div>
+              <!--Container for Inputs and Button-->
+              <div class="input-container">
+                <div id="input-title">
+                  <h2>Enter Location</h2>
+                </div>
+                <!--Input Fields Container-->
+                <div class="input-location">
+                  <div class="input">
+                    <input id="country" class="input" placeholder="Country Abbreviation" />
+                    <input id="city" class="input" placeholder="City" />
+                  </div>
+                  <button id="submit">Generate</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!--Container for p5 Canvas-->
+      <div id="sketch-holder"></div>
+    </main>
+
+    <!--Footer-->
+    <footer>
+      <div id="author">
+        <h3>by Solomon Moulang Lewis</h3>
+      </div>
+      <div id="openweathermap">
+        <a href="https://openweathermap.org" target="_blank">@OpenWeatherMapAPI</a>
+      </div>
+    </footer>
+  </div>
+
+  <!--Javascript-->
+  <!----------------------------------------->
+  <!--TweenMax Library-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+    integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!--TimelineMax Library-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+    integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!--Main Script-->
+  <script src="./scripts/script.js"></script>
+  <!--p5 Script-->
+  <script src="./scripts/sketch.js"></script>
+</body>
+
+</html>

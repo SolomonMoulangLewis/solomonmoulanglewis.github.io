@@ -287,17 +287,32 @@ i {
     top: 3vh;
 }
 
-/* ------------------------------- */
-/* P5 Background Clouds CANVAS */
-
-#sketch-holder {
-    width: 100%;
-    height: 100vh;
+/* ------------------------------------ */
+/* EMAIL */
+#email {
     position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: -1;
+    bottom: 0;
+    right: 0;
+    margin: 1em;
+    background: white;
+    border-radius: 3em;
+    padding: 0.4em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    text-align: center;
+    transition: all 500ms;
+}
+
+#email a {
+    font-size: 1.4rem;
+    font-family: sub-reg;
+    color: black;
+}
+
+#email a:hover {
+    text-decoration: underline;
+}
+
+#email:hover {
+    padding: 0.7em;
 }

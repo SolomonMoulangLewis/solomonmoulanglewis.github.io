@@ -28,10 +28,6 @@ section {
     transition: all 2s ease;
 }
 
-.show {
-    opacity: 1;
-}
-
 /* #first {
     position: relative;
     top: -2em;

@@ -91,7 +91,7 @@ html {
     height: 1px;
     border-radius: 50em;
 
-    background-color: var(--off-white);
+    background-color: black;
     transition: all 2s ease-in-out;
     opacity: 0;
 }
@@ -101,7 +101,6 @@ html {
     height: 200%;
     border-radius: 0em;
     opacity: 1;
-    background-color: black;
 }
 
 /* --------------------------------------------- */
@@ -188,31 +187,22 @@ html {
     transform: rotate(-225deg) translateX(-50%);
 }
 
-/* ------------------------------------ */
-#email {
+/* ------------------------------- */
+/* P5 Background Clouds CANVAS */
+
+#sketch-holder {
+    width: 100%;
+    height: 100vh;
     position: fixed;
-    bottom: 0;
-    right: 0;
-    margin: 1em;
-    background: white;
-    border-radius: 3em;
-    padding: 0.4em;
-    padding-left: 0.6em;
-    padding-right: 0.6em;
-    text-align: center;
-    transition: all 500ms;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
 }
 
-#email a {
-    font-size: 1.4rem;
-    font-family: sub-reg;
-    color: black;
-}
-
-#email a:hover {
-    text-decoration: underline;
-}
-
-#email:hover {
-    padding: 0.7em;
+/* ------------------------------------------------- */
+.show {
+    opacity: 1 !important;
 }

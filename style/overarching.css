@@ -194,14 +194,25 @@ html {
     bottom: 0;
     right: 0;
     margin: 1em;
+    background: white;
+    border-radius: 3em;
+    padding: 0.4em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    text-align: center;
+    transition: all 500ms;
 }
 
 #email a {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-family: sub-reg;
-    color: red;
+    color: black;
 }
 
 #email a:hover {
     text-decoration: underline;
+}
+
+#email:hover {
+    padding: 0.7em;
 }

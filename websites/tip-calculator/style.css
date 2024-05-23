@@ -1,0 +1,221 @@
+/* Root Variable stores web page colours */
+:root {
+    --background1: #e6ae35;
+    --background2: #cf9c2f;
+
+    --calc1: #5f4b8bff;
+    --calc2: #e69a8Dff;
+
+    --calc1-highlight: #6f5d96;
+    --calc2-highlight: #ebaea3;
+
+    --calc-text: #eeb8af;
+}
+
+/* Removing inital margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Adding External font */
+@font-face {
+    font-family: calcFont;
+    src: url('./font/Orbitron-Medium.ttf')
+}
+
+/* Applying font to whole project
+    - Note: for some reason this doesn't 
+    apply it to buttons? */
+body {
+    font-family: calcFont;
+}
+
+/* Setting global font size, 1rem = 10 pixels */
+html {
+    font-size: 62.5%;
+}
+
+/* Using Div as background container */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Slight vinnette */
+    background: radial-gradient(var(--background1),
+            var(--background2));
+    /* Drops it to the back */
+    z-index: -1;
+}
+
+/* Styling Header */
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 13vh;
+
+    /* Faded unerline */
+    background: linear-gradient(to right,
+            rgb(0, 0, 0, 0) 20%,
+            black,
+            rgb(0, 0, 0, 0) 80%) bottom no-repeat;
+    background-size: 100% 0.2rem;
+}
+
+/* Style Title */
+#logo {
+    font-size: 2.4rem;
+    letter-spacing: 0.3rem;
+    word-spacing: 1rem;
+}
+
+/*  Positioning background container
+    'relative' to header an whole page, 
+    centering in page */
+.calculator-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 87vh;
+}
+
+/*  Stores the calculator body,
+    Used for sizing,
+    Sizing is relative to screen width */
+.calculator {
+    position: relative;
+    width: 40vh;
+    height: 60vh;
+    max-height: 100%;
+}
+
+/*  Calculator displaying as grid
+    Note: I think I could have done this
+    in the above container... too late now :D */
+.calc-grid {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(3, 33.333%);
+    grid-template-rows: minmax(20%, auto) repeat(5, 15%);
+}
+
+/* AC button spans two grid columns */
+#ac {
+    grid-column: span 2;
+}
+
+/*  Calculator screen
+    Styling and positioning */
+.calc-screen {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: black;
+    /* Spans 3 rows */
+    grid-column: span 3;
+    color: var(--calc-text);
+    overflow: hidden;
+}
+
+/* Text (added in Javascript) */
+.on-screen {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+    font-size: 1.8rem;
+}
+
+/* .on-screen Heading (text added in Javascript) */
+#heading {
+    margin: 1rem;
+    font-size: 2rem;
+}
+
+/* Animation when mouse hovers calculator */
+.calculator:hover #heading {
+    /* flashes heading */
+    animation: opacity 1s infinite;
+}
+
+/* Styling buttons in calculator */
+.calc-button {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    border: 0.001rem solid black;
+
+    color: var(--calc2);
+    background-color: var(--calc1);
+    font-weight: bold;
+    font-size: 1.6rem;
+    cursor: pointer;
+    /* Slight transition for :hover */
+    transition: 0.3s ease;
+}
+
+/* Styling hover for buttons */
+.calc-button:hover {
+    background-color: var(--calc1-highlight);
+    color: var(--calc2-highlight);
+    font-size: 1.8rem;
+
+    transition: 0.2s ease;
+}
+
+/* Slight different styling for submit button */
+#submit {
+    opacity: 0.9;
+    font-family: calcFont;
+}
+
+/* Slight different stlyling for submit:hover */
+#submit:hover {
+    font-size: 1.8rem;
+    overflow: hidden;
+    transition: 0.2s ease;
+    color: var(--calc-text);
+}
+
+/*  Reapplying font to buttons
+    Note: I didnt apply to all buttons,
+    as I didn't like the font numbers */
+#ac {
+    font-family: calcFont;
+}
+
+#del {
+    font-family: calcFont;
+}
+
+/* Animation */
+@keyframes opacity {
+    from {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

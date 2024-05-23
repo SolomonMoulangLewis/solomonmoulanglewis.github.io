@@ -1,0 +1,99 @@
+:root {
+  --light: white;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+/* An empty div, covering the whole background */
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  background: linear-gradient(to left, #f4c430, #f4bb44);
+
+  z-index: -1;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 10% 1fr 2fr 10%;
+  min-height: 10vh;
+  align-items: center;
+
+  background: linear-gradient(
+      to right,
+      rgb(0, 0, 0, 0) 0%,
+      rgb(255, 255, 255) 33%,
+      rgb(255, 255, 255) 66%,
+      rgb(0, 0, 0, 0) 100%
+    )
+    bottom no-repeat;
+  background-size: 100% 0.2rem;
+}
+#logo {
+  grid-column: 2/3;
+  font-size: 3rem;
+  color: var(--light);
+}
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+}
+.nav-links li {
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--light);
+  font-size: 1.6rem;
+}
+
+section {
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+}
+.hero {
+  height: 60%;
+  width: 100%;
+
+  position: relative;
+}
+.hero::after {
+  content: "";
+  background: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  opacity: 0.2;
+}
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.headline {
+  position: absolute;
+  top: 70%;
+  left: 20%;
+  transform: translate(-20%, -70%);
+  font-size: 10rem;
+
+  color: var(--light);
+
+  z-index: 1;
+}

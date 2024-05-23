@@ -1,0 +1,319 @@
+/*-----------------------------------*/
+/* Root Variables */
+:root {
+  --dark: #000000;
+  /* --shadow: #778899;
+  --light-shadow: #94a4b4; */
+  --shadow: #d2d2d2;
+  --light-shadow: #e3e3e3;
+  --light: #ffffff;
+  --box-highlight: rgb(162, 81, 81);
+}
+
+/* Overarching Project Settings */
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 62.5%;
+
+  overflow: hidden;
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+  margin-left: 20px;
+  pointer-events: none;
+}
+
+/*-----------------------------------*/
+/* Don't think it needs to be here */
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  background: var(--dark);
+
+  z-index: -2;
+}
+
+/*-----------------------------------*/
+/* HTML Colour Variables */
+/*-----------------------------------*/
+.colour {
+  display: none;
+}
+
+/*-----------------------------------*/
+/* Overarching Grid for Layout */
+/*-----------------------------------*/
+.grid-container {
+  display: grid;
+  grid-template-rows: 1fr 10fr 1fr;
+
+  height: 100vh;
+}
+
+/*-----------------------------------*/
+/* Header settings */
+/*-----------------------------------*/
+header {
+  display: flex;
+
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*-----------------------------------*/
+/* Header */
+/*-----------------------------------*/
+/* Logo and Title */
+.title-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#logo {
+  height: 100%;
+  margin: 0.5rem;
+}
+
+#logo img {
+  object-fit: cover;
+  height: 100%;
+}
+
+#title {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 1rem;
+
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: black;
+}
+
+#sub-title {
+  font-family: regFont;
+}
+
+/*-----------------------------------*/
+/* Main */
+/*-----------------------------------*/
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Content Container */
+.main-content-container {
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--light-shadow);
+  border-radius: 3rem;
+}
+
+/*-----------------------------------*/
+/* Location Input Container */
+#description {
+  font-size: 1.8rem;
+  font-family: desFont;
+  margin: 3rem;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.5rem;
+  text-align: center;
+}
+
+/*-----------------------------------*/
+/* Location Input Main Container */
+.input-container {
+  display: grid;
+  grid-template-rows: 1 1;
+  gap: 0.5rem;
+  margin: 3rem;
+  margin-left: 20px;
+}
+
+/* Location Input Sub Container */
+.input-location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+select {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 30px 6px 10px;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  width: 160px;
+}
+
+select::after {
+  content: '▼';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #333;
+}
+
+select option {
+  background-color: #fff;
+  color: #333;
+}
+
+select:hover {
+  background-color: #e0e0e0;
+  border-color: #888;
+}
+
+select:focus {
+  border-color: #555;
+}
+
+/* Input Fields Container (without title) */
+.input {
+  display: grid;
+  margin: 0.3rem;
+}
+
+/* Input Fields Title */
+#input-title {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  font-family: semi-boldFont;
+}
+
+/* Input elements */
+.input-container input {
+  width: 20rem;
+  min-height: 2.3rem;
+  font-size: 1.4rem;
+  font-family: regFont;
+  border-radius: 0.5rem;
+  border: none;
+  background: var(--light);
+}
+
+/* Input elements placeholder */
+.input-container input::-webkit-input-placeholder {
+  padding-left: 0.3rem;
+}
+
+/* Input elements Hover */
+.input-container input:hover {
+  background: var(--shadow);
+  border: none;
+}
+
+/* Input elements placeholder hover */
+.input-container input:hover::-webkit-input-placeholder {
+  color: var(--light);
+}
+
+/* Input elements on Focus */
+.input-container input:focus {
+  background: var(--light);
+  outline: 0.1rem solid var(--shadow);
+  border: none;
+}
+
+#submit {
+  font-size: 1rem;
+  font-family: regFont;
+
+  border: none;
+  border-radius: 2rem;
+  background: white;
+  padding: 3px;
+  cursor: pointer;
+}
+
+/* Generate Button Hover */
+#submit:hover {
+  background: black;
+  color: white;
+  text-decoration: underline;
+}
+
+/*-----------------------------------*/
+/* p5 Sketch Container */
+/*-----------------------------------*/
+#sketch-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/*-----------------------------------*/
+/* Footer Init Settings */
+/*-----------------------------------*/
+footer {
+  position: relative;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--light-shadow);
+  font-size: 1.2rem;
+}
+
+#author {
+  font-family: boldFont;
+  margin: 0.8rem;
+}
+
+#openweathermap a {
+  text-decoration: none;
+  color: var(--light);
+  font-size: 1.2rem;
+}
+
+/*-----------------------------------*/

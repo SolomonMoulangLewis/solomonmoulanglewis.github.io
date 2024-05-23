@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <title>Solomon's Portfolio</title>
+</head>
+
+<body class="relative">
+
+    <!-- for scroll bar -->
+    <div id="top" class="sb"></div>
+    <div id="right" class="sb"></div>
+    <div id="bottom" class="sb"></div>
+    <div id="left" class="sb"></div>
+
+    <div id="page1" class="page1 bg-white h-screen"></div>
+    <div class="page2 bg-white h-screen events-none"></div>
+
+    <!-- FIXED -->
+    <div class="lines-container fixed top-0 left-0 h-screen w-full flex flex-col h-full">
+        <!-- lines inserted inside container from js -->
+    </div>
+
+    <div class="page2-5 w-full">
+        <span
+            class="txt-type-about-me fixed inset-0 flex items-center justify-center text-white apercu text-2xl text-center"></span>
+    </div>
+
+    <!-- PAGE 3 -->
+    <div class="page3-overlay overlay bg-black opacity-0 fixed top-0 left-0 h-screen w-full"></div>
+    <div id="page3" class="page page3 h-screen flex flex-col justify-center items-center">
+        <h2 id="text-quilio" class="title title-top fixed -top-[10vh] text-center text-white z-10">
+            QUILIO
+        </h2>
+        <p id="about-quilio" class="apercu z-10 fixed m-20 text-center">
+            <span class="txt-type-quilio text-2xl text-white"></span>
+        </p>
+        <div id="quilio-img-container" class="img-container fixed bottom-0 flex w-3/5 h-3/5 gap-10">
+            <img class="quilio-img" src="img/quilio/quilio-1.png" alt="">
+            <img class="quilio-img" src="img/quilio/quilio-2.png" alt="">
+            <img class="quilio-img" src="img/quilio/quilio-3.png" alt="">
+            <img class="quilio-img" src="img/quilio/quilio-4.png" alt="">
+        </div>
+        <a id="quilio-link"
+            class="hidden apercu opacity-0 text-xl rounded-full py-2 px-2 hover:bg-black hover:text-white hover:underline bg-white text-black"
+            href="https://quilio.dev/" target="_blank">WEBSITE</a>
+    </div>
+
+    <!-- PAGE 4 -->
+    <div class="page4-overlay overlay bg-white opacity-0 fixed top-0 left-0 h-screen w-full"></div>
+    <div id="page4" class="page page4 flex flex-col justify-center items-center">
+        <h2 id="text-blue-sparrow" class="title title-top text-black fixed -top-[10vh] text-center z-10">
+            BLUE SPARROW
+        </h2>
+        <p id="about-blue-sparrow" class="text-black text-about apercu z-10 fixed m-20 text-center">
+            <span class="txt-type-blue-sparrow text-2xl"></span>
+        </p>
+        <div id="blue-sparrow-img-container" class="img-container fixed bottom-0 flex w-3/5 h-3/5 gap-10">
+            <img class="blue-sparrow-img" src="img/blue-sparrow/sweepstake.png" alt="">
+        </div>
+    </div>
+
+    <!-- PAGE 5 -->
+    <div class="page5-overlay overlay bg-black opacity-0 fixed top-0 left-0 h-screen w-full"></div>
+    <div id="page5" class="page page5 events-none flex flex-col justify-center items-center">
+        <h2 id="text-yellow" class="title title-top text-center text-white fixed -top-[10vh] text-center z-10">
+            YELLOW
+        </h2>
+        <p id="about-yellow" class="text-white text-about apercu z-10 fixed m-20 text-center">
+            <span class="txt-type-yellow text-2xl"></span>
+        </p>
+        <div id="yellow-iframe-container" class="iframe-container fixed bottom-20 w-5/6 h-3/5">
+            <!-- iframe will be inserted -->
+        </div>
+    </div>
+
+    <!-- PAGE 6 -->
+    <div class="page6-overlay overlay bg-black opacity-0 fixed top-0 left-0 h-screen w-full"></div>
+    <div id="page6" class="page page6 h-screen events-none flex flex-col justify-center items-center">
+        <h2 id="text-dan" class="title title-top text-center text-white fixed -top-[10vh] text-center z-10">
+            A MAGAZINE
+        </h2>
+        <p id="about-dan" class="text-white text-about apercu z-10 fixed m-20 text-center">
+            <span class="txt-type-dan text-2xl"></span>
+        </p>
+        <div id="dan-iframe-container" class="iframe-container fixed bottom-20 w-5/6 h-3/5">
+            <!-- iframe will be inserted -->
+        </div>
+    </div>
+
+    <div class="page7-overlay overlay bg-white opacity-0 fixed top-0 left-0 h-screen w-full"></div>
+    <div id="page7" class="page page7 h-screen events-none flex flex-col justify-center items-center">
+        <h2 id="text-weather" class="title title-top text-center text-black fixed -top-[10vh] text-center z-10">
+            WEATHER
+        </h2>
+        <p id="about-weather" class="text-black text-about apercu z-10 fixed m-20 text-center">
+            <span class="txt-type-weather text-2xl"></span>
+        </p>
+        <div id="weather-iframe-container" class="iframe-container fixed bottom-20 w-5/6 h-3/5">
+            <!-- iframe will be inserted -->
+        </div>
+        <div id="weather-iframe-mask" class="fixed bottom-20 w-5/6 bg-transparent"></div>
+    </div>
+
+    <footer>
+        <div id="page8" class="page8 page h-screen bg-white"></div>
+        <div class="page8-overlay h-screen w-full fixed top-0 left-0 bg-white opacity-0"></div>
+
+        <!-- FIXED -->
+        <div class="lines-container2 fixed top-0 left-0 h-screen w-full flex flex-col h-full">
+            <!-- lines inserted inside container from js -->
+        </div>
+    </footer>
+
+    <section class="h-screen w-full absolute top-0 left-0 flex items-center justify-center">
+        <div class="fixed inverse-text">
+            <div class="text flex gap-4 text-4xl" id="text1">
+                <h2>SOLOMON</h2>
+                <h2>MOULANG</h2>
+                <h2>LEWIS</h2>
+            </div>
+            <div class="text flex justify-between text-3xl" id="text2">
+                <h2>WEBSITE</h2>
+                <h2>DEVELOPMENT</h2>
+            </div>
+            <div class="text text-3xl flex justify-between" id="text3">
+                <h3>PORTFOLIO</h3>
+                <h3>-</h3>
+                <h3>2024</h3>
+            </div>
+        </div>
+    </section>
+
+    <div id="get-me" class="text-lg opacity-0 inverse-text fixed top-5 w-full flex justify-between" id="text3">
+        <a class="mx-10" href="img/Solomon Moulang Lewis - Resume.pdf" target="_blank">CV</a>
+        <a class="mx-10" href="mailto:solomonmoulang@gmail.com" target="_blank" rel="noopener noreferrer">EMAIL</a>
+    </div>
+
+    <div class="page-dots">
+        <a href="#page2-5" class="dot"></a>
+        <a href="#page3" class="dot"></a>
+        <a href="#page4" class="dot"></a>
+        <a href="#page5" class="dot"></a>
+        <a href="#page6" class="dot"></a>
+    </div>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <!-- Custom JS -->
+    <script src="scripts.js"></script>
+</body>
+
+</html>

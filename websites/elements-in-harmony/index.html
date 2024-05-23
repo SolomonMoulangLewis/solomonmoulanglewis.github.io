@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--p5 libraries-->
+  <script src="./scripts/p5/p5.js"></script>
+  <script src="./scripts/p5/p5.sound.min.js"></script>
+  <!--My Additional Files-->
+  <script src="./scripts/weather-synth.js"></script>
+  <script src="./scripts/circMaker.js"></script>
+  <script src="./scripts/sun-moon.js"></script>
+  <!--CSS-->
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <!--grid container for display: grid-->
+  <div class="grid-container">
+    <!--Header-->
+    <header>
+      <div id="title">
+        <h1>Generative Weather #Art@%!</h1>
+      </div>
+
+      <div class="input-location">
+        <div class="input">
+          <select id="countries" name="countries" onchange="updateCapital()">
+            <option value="">SELECT A COUNTRY</option>
+          </select>
+          <input style="display: none;" type="text" id="city" name="city" readonly>
+        </div>
+        <button id="submit">START</button>
+      </div>
+    </header>
+
+    <!--Container for p5 Canvas-->
+    <div id="sketch-holder" style="pointer-events: none;"></div>
+    </main>
+  </div>
+
+  <!--Javascript-->
+  <!----------------------------------------->
+  <!--TweenMax Library-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+    integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!--TimelineMax Library-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+    integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!--Main Script-->
+  <script src="./scripts/script.js"></script>
+  <!--p5 Script-->
+  <script src="./scripts/sketch.js"></script>
+
+  <script>
+    async function fetchCountries() {
+      try {
+        const response = await fetch('https://restcountries.com/v3.1/all');
+        const countries = await response.json();
+        const countryDropdown = document.getElementById('countries');
+
+        countries.forEach(country => {
+          const option = document.createElement('option');
+          option.value = country.cca2;  // country abbreviation
+          option.textContent = country.name.common;  // country name
+          option.dataset.capital = country.capital ? country.capital[0] : 'N/A'; // capital city
+          countryDropdown.appendChild(option);
+        });
+      } catch (error) {
+        console.error('Error fetching countries:', error);
+      }
+    }
+
+    function updateCapital() {
+      const selectedCountry = document.getElementById('countries').selectedOptions[0];
+      const capitalInput = document.getElementById('city');
+      capitalInput.value = selectedCountry.dataset.capital;
+    }
+
+    fetchCountries();
+  </script>
+</body>
+
+</html>

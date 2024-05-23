@@ -1,0 +1,133 @@
+/* Root: Holding Project Variables */
+:root {
+  --primary: black;
+  --secondary: white;
+}
+
+/* Global parameters */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* setting project font size  */
+html {
+  font-size: 62.5%;
+}
+
+/* Global Variables */
+body {
+  background-color: var(--primary);
+}
+
+/* all images */
+.img {
+  object-fit: cover;
+}
+
+/* Global parameters for header */
+header {
+  margin: 2rem;
+}
+
+/* tv image properties */
+#tv {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  width: 10%;
+
+  border: 0.3rem solid var(--secondary);
+}
+
+/* tv image hover properties */
+#tv:hover {
+  animation: rotation 2s infinite linear;
+
+  transition: transform 500ms;
+}
+
+/* animation for tv image */
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/* nav bar properties */
+nav {
+  margin: 2rem;
+
+  border-top: 0.3rem solid var(--secondary);
+  border-bottom: 0.3rem solid var(--secondary);
+}
+
+/* text properties */
+#text {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+  animation: fade-in 1s cubic-bezier(0.89, 0.17, 0.85, 0.64);
+}
+
+/* text hover properties */
+#text:hover {
+  animation: fade-out 1s cubic-bezier(0.89, 0.17, 0.85, 0.64);
+}
+
+/* text animation out */
+@keyframes fade-out {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+/* text animation in */
+@keyframes fade-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(0%);
+    opacity: 1;
+  }
+}
+
+/* house image properties */
+#house {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+/* house image hover properties */
+#house:hover {
+  animation: opacity 1s cubic-bezier(0.89, 0.17, 0.85, 0.64);
+}
+
+/* house image animation properties */
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
